@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Thinksoft.crudTutorial.EDM.Product>
+
+@{
+    ViewData["Title"] = "Manage Product";
+}
+
+<h1>List of Products</h1>
+
+<h2>@TempData["Message"]</h2>
+
+<a asp-controller="ManageProduct" asp-action="Create">
+    Add New Product
+</a>
+
+<br />
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@if (Model != null)
+{
+    @foreach (var product in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => product.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => product.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => product.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => product.Category)
+        </td>
+        <td>
+            <a asp-controller="ManageProduct" asp-action="Edit"
+                   asp-route-productId="@product.Id">Edit</a>
+        </td>
+        <td>
+            <a asp-controller="ManageProduct" asp-action="Delete"
+                   asp-route-productId="@product.Id">Delete</a>
+        </td>
+    </tr>
+    }
+}
+    </tbody>
+</table>

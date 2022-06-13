@@ -1,0 +1,8 @@
+-- Product definition
+
+CREATE TABLE Product (
+	Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	Name TEXT(36) NOT NULL,
+	Price INTEGER NOT NULL,
+	Category TEXT(12)
+);

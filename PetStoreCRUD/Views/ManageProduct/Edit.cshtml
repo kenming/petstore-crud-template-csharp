@@ -1,0 +1,35 @@
+﻿@model Thinksoft.crudTutorial.EDM.Product
+
+<h1>Create a Product</h1>
+
+<form asp-controller="ManageProduct" asp-action="Edit" method="post">
+    <table border="1" cellpadding="10">
+        <tr>
+            <td>Product ID : </td>
+            <td>
+                <input asp-for="Id"
+                       readonly="readonly" />
+            </td>
+        </tr>
+        <tr>
+            <td>Name :</td>
+            <td><input asp-for="Name" /></td>
+        </tr>
+        <tr>
+            <td>Price :</td>
+            <td><input asp-for="Price" /></td>
+        </tr>
+        <tr>
+            <td>Category :</td>
+            <td><input asp-for="Category" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Update</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br />
+<h2 style="color:blue;">@ViewBag.Message</h2>
